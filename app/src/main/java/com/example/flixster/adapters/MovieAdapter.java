@@ -1,6 +1,7 @@
 package com.example.flixster.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -13,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.flixster.details;
 import com.example.flixster.models.Movie;
 import com.example.flixster.R;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -45,7 +49,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return movies.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView mvTitle;
         TextView mvOver;
         ImageView mvPoster;
@@ -56,7 +60,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             mvTitle = itemView.findViewById(R.id.mvTitle);
             mvOver = itemView.findViewById(R.id.mvOver);
             mvPoster = itemView.findViewById(R.id.mvPoster);
-
+            itemView.setOnClickListener(this);
 
         }
 
@@ -76,6 +80,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             // if (url == "") {
             //   mvPoster.setImageResource(R.drawable.ic_action_name);
             //}
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                Movie movie = movies.get(position);
+                Intent intent = new Intent(context, details.class);
+                intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+                context.startActivity(intent);
+            }
         }
     }
 }
