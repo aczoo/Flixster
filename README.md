@@ -29,6 +29,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+![Demo](https://github.com/aczoo/Flixster/blob/master/Kapture%202020-06-26%20at%2016.12.31.gif)
 
 
 
