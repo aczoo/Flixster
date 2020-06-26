@@ -19,7 +19,6 @@ import com.example.flixster.models.Movie;
 import org.parceler.Parcels;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
-
 public class details extends AppCompatActivity {
     Movie movie;
     TextView tvTitle;
@@ -27,7 +26,6 @@ public class details extends AppCompatActivity {
     TextView tvDate;
     ImageView ivBackDrop;
     RatingBar rbVoteAverage;
-    Context context;
     int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
 
 import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -29,15 +31,19 @@ import okhttp3.Headers;
 public class MainActivity extends AppCompatActivity {
     public static final String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=5a4f96712b96651b6e97151cc6e8e0a8";
     public static final String TAG = "main";
+    private com.example.flixster.databinding.ActivityMainBinding binding;
     List<Movie> movies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = com.example.flixster.databinding.ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
 
         movies=new ArrayList<>();
-        RecyclerView rvMovies=findViewById(R.id.rvmovies);
+        RecyclerView rvMovies= binding.rvmovies;
         final MovieAdapter mva = new MovieAdapter(this, movies);
         rvMovies.setAdapter(mva);
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
