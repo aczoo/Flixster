@@ -80,6 +80,7 @@ public class details extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                 Log.d("trailer", "onFailure");
+                Toast.makeText(details.this, "Can't find video", Toast.LENGTH_SHORT).show();
             }
         });
         if (videoId != "") {

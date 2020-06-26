@@ -79,4 +79,18 @@
         app:layout_constraintTop_toBottomOf="@+id/mvTitle"
         app:srcCompat="@drawable/flicks_backdrop_placeholder" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="80dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivBackDrop"
+        app:layout_constraintVertical_bias="0.55"
+        android:clickable="true"
+        android:onClick="clickTrailer"
+        app:srcCompat="@drawable/play" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
