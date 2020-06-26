@@ -22,6 +22,8 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     Context context;
     List<Movie> movies;
@@ -70,11 +72,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             String url;
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 url = movie.getBdPath();
-                Glide.with(context).load(url).placeholder(R.drawable.flicks_backdrop_placeholder).into(mvPoster);
+                Glide.with(context).load(url).transform(new RoundedCornersTransformation(15, 15)).placeholder(R.drawable.flicks_backdrop_placeholder).into(mvPoster);
 
             } else {
                 url = movie.getPosterPath();
-                Glide.with(context).load(url).placeholder(R.drawable.flicks_movie_placeholder).into(mvPoster);
+                Glide.with(context).load(url).transform(new RoundedCornersTransformation(15, 15)).placeholder(R.drawable.flicks_movie_placeholder).into(mvPoster);
             }
             // no longer necessary given the placeholder
             // if (url == "") {
