@@ -31,7 +31,8 @@
         android:fontFamily="@font/open_sans_semibold"
         android:maxLines="1"
         android:text="Movie"
-        android:textColor="#F1EBDA"
+        android:textAllCaps="true"
+        android:textColor="#B5FCB245"
         android:textSize="18sp" />
 
     <TextView
