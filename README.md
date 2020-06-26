@@ -17,24 +17,18 @@ The following **required** functionality is completed:
 
 The following **stretch** features are implemented:
 
-* [x] Improved the user interface by experimenting with styling and coloring.
+* [x] Improved the user interface by experimenting with color, action bar, status bar, launch icon and scrollviews
 * [x] Apply rounded corners for the poster or background images using [Glide transformations](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#transformations)
 * [x] Apply the popular [View Binding annotation library](http://guides.codepath.org/android/Reducing-View-Boilerplate-with-ViewBinding) to reduce boilerplate code.
 * [x] Allow video trailers to be played in full-screen using the YouTubePlayerView from the details screen.
 
-The following **additional** features are implemented:
-
-* [ ] List anything else that you can get done to improve the app functionality!
-
 ## Video Walkthrough
-![Horizontal Demo](https://github.com/aczoo/Flixster/blob/master/demo2.gif)<br />
-![Demo](https://github.com/aczoo/Flixster/blob/master/demo1.gif)
-
-
+![Demo](https://github.com/aczoo/Flixster/blob/master/demo1.gif)<br />
+![Horizontal Demo](https://github.com/aczoo/Flixster/blob/master/demo2.gif)
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+- Had slight trouble with accessing the correct Youtube trailer as all requests for video ID were shifted one down
+  - Fixed by moving the HTTP request from the player into the details page
 
 ## Open-source libraries used
 
@@ -43,7 +37,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2020 [?]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
