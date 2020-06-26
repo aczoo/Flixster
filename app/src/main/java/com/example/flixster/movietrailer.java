@@ -20,39 +20,15 @@ import org.json.JSONObject;
 import okhttp3.Headers;
 
 public class movietrailer extends YouTubeBaseActivity {
-    public static final String url = "https://api.themoviedb.org/3/movie/*/videos?api_key=5a4f96712b96651b6e97151cc6e8e0a8&language=en-US";
-    public static String videoId;
+    String videoId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movietrailer);
 
-        final int movieId = getIntent().getIntExtra("id", 0);
-        Log.d("movieid",""+movieId);
-        String rs = url.replace("*",""+movieId);
-        Log.d("movieid",rs);
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(rs, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Headers headers, JSON json) {
-                Log.d("trailer", "onSuccess");
-                JSONObject jsonObject = json.jsonObject;
-                try {
-                    JSONArray results = jsonObject.getJSONArray("results");
-                    videoId= results.getJSONObject(0).getString("key");
-                    Log.d("trailer",videoId);
-                } catch (JSONException e) {
-                    Log.e("trailer", "jsonException: ");
-                    e.printStackTrace();
-                }
-            }
-            @Override
-            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                Log.d("trailer", "onFailure");
+        videoId = getIntent().getStringExtra("id");
 
-            }
-        });
         YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
 
         playerView.initialize(getString(R.string.youtube_api_key), new YouTubePlayer.OnInitializedListener() {
