@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 * [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
-![Horizontal Demo](https://github.com/aczoo/Flixster/blob/master/demo2.gif)
+![Horizontal Demo](https://github.com/aczoo/Flixster/blob/master/demo2.gif)<br />
 ![Demo](https://github.com/aczoo/Flixster/blob/master/demo1.gif)
 
 
