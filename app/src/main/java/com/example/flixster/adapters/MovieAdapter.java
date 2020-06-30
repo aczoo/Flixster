@@ -82,7 +82,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             //   mvPoster.setImageResource(R.drawable.ic_action_name);
             //}
         }
-
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
